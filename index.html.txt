@@ -1,0 +1,12 @@
+index.html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Birthday Surprise 🎉</title>
+</head>
+<body style="text-align:center; background:#ffe6f0;">
+  <h1>🎂 Happy Birthday 🎂</h1>
+  <h2>💖 Tumhari zindagi khushiyon se bhari rahe 💖</h2>
+  <p>Ye chhota sa surprise sirf tumhare liye 😊</p>
+</body>
+</html>
