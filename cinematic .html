@@ -1,0 +1,148 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>15th Birthday Cinematic Surprise</title><!-- Google Fonts --><link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet"><style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:linear-gradient(#0b0016,#000);color:#fff;overflow-x:hidden;}
+
+/* Stars */
+.stars span{position:fixed;width:2px;height:2px;background:#fff;animation:twinkle linear infinite;opacity:0.7;}
+@keyframes twinkle{from{transform:translateY(0);}to{transform:translateY(-100vh);}}
+
+/* Hero Section */
+.hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;}
+.hero h1{font-family:'Pacifico',cursive;font-size:3.5rem;color:#ff9ce3;animation:neon 2s infinite alternate;}
+.hero h2{margin-top:15px;font-size:2rem;letter-spacing:2px;color:#ffd1f2;}
+@keyframes neon{from{text-shadow:0 0 10px #ff4fcf;}to{text-shadow:0 0 40px #ffb3ec;}}
+.scroll{position:absolute;bottom:30px;opacity:0.7;animation:bounce 2s infinite;}@keyframes bounce{50%{transform:translateY(-10px);}}
+
+/* Sections */
+section{padding:90px 20px;max-width:900px;margin:auto;text-align:center;}
+section h3{font-size:2.6rem;color:#ffd1f2;margin-bottom:20px;}
+section p{font-size:1.1rem;line-height:1.9;opacity:0.9;}
+
+/* Balloons */
+.balloons{position:relative;height:350px;overflow:hidden;}
+.balloon{position:absolute;bottom:-150px;width:70px;height:90px;border-radius:50%;animation:float 10s linear infinite;box-shadow: inset -5px -10px rgba(0,0,0,.2),0 0 20px rgba(255,255,255,.2);}
+.balloon::after{content:'';position:absolute;bottom:-20px;left:50%;width:2px;height:25px;background:#fff;}
+@keyframes float{to{transform:translateY(-800px);}}
+
+/* Cake */
+.cake{margin:100px auto;width:240px;}
+.layer{height:65px;margin-bottom:6px;border-radius:12px;background:linear-gradient(#ffb3e6,#ff4fa3);box-shadow:0 10px 20px rgba(0,0,0,.4);}
+.candle{width:12px;height:45px;background:#fff;margin:0 auto;position:relative;}
+.flame{position:absolute;top:-22px;left:50%;width:18px;height:24px;background:radial-gradient(circle,#ffd166,orange,red);border-radius:50%;transform:translateX(-50%);animation:flicker .25s infinite;box-shadow:0 0 25px orange;}
+@keyframes flicker{50%{transform:translateX(-50%) scale(.8);}}
+
+/* Confetti */
+.confetti{position:fixed;width:6px;height:12px;background:red;top:-20px;animation:fall linear infinite;}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg);}}
+
+/* Hearts */
+@keyframes heart{to{transform:translateY(-150px) rotate(45deg) scale(0);opacity:0;}}
+
+/* God Mode Banner */
+#god{position:fixed;top:20px;left:50%;transform:translateX(-50%);padding:10px 25px;border-radius:30px;background:linear-gradient(90deg,#ff00cc,#3333ff,#00ffd5);color:#fff;font-weight:600;letter-spacing:2px;box-shadow:0 0 30px rgba(255,255,255,.5);animation:pulse 1.5s infinite alternate;z-index:9999;}
+@keyframes pulse{to{transform:translateX(-50%) scale(1.1);}}
+</style></head>
+<body><div class="stars"></div>
+<div class="hero">
+  <h1>Happy 15th Birthday</h1>
+  <h2>✨ <span id="name">NAME</span> ✨</h2>
+  <div class="scroll">scroll down ⬇️</div>
+</div><section>
+<h3>15 Years of Joy</h3>
+<p>Ek chhoti si journey leke aaye hain, jahan hasi, sapne aur yaadein saath chal rahi hain. Yeh din special hai, kyunki aaj sirf birthday nahi, ek new chapter ka start hai.</p>
+</section><div class="balloons">
+<div class="balloon" style="left:10%;background:#ff5fa2"></div>
+<div class="balloon" style="left:30%;background:#ffd166;animation-delay:2s"></div>
+<div class="balloon" style="left:50%;background:#9bf6ff;animation-delay:4s"></div>
+<div class="balloon" style="left:70%;background:#cdb4db;animation-delay:1s"></div>
+<div class="balloon" style="left:90%;background:#ffadad;animation-delay:3s"></div>
+</div><section>
+<h3>Make a Wish 🎂</h3>
+<div class="cake">
+<div class="candle"><div class="flame"></div></div>
+<div class="layer"></div>
+<div class="layer"></div>
+<div class="layer"></div>
+</div>
+<p>Cake sirf mithaas nahi, yeh yaadein hai. Aaj ki yeh yaad hamesha chamakti rahe.</p>
+</section><section>
+<h3>Fun & Cute Moments</h3>
+<p>Naam pe touch karo aur dekho soft hearts explode! Har scroll pe cinematic effect aur confetti celebrate kar raha hai.</p>
+</section><div id="god">✨ Surprise Activated ✨</div>
+<footer>Crafted with ❤️ for a special 15th Birthday</footer><script>
+const birthdayName = "Sakshi";
+document.getElementById('name').innerText = birthdayName;
+
+// Stars
+for(let i=0;i<120;i++){
+  const s=document.createElement('span');
+  s.style.left=Math.random()*100+'%';
+  s.style.top=Math.random()*100+'%';
+  s.style.animationDuration=5+Math.random()*10+'s';
+  document.querySelector('.stars').appendChild(s);
+}
+
+// Confetti
+for(let i=0;i<40;i++){
+  const c=document.createElement('div');
+  c.className='confetti';
+  c.style.left=Math.random()*100+'%';
+  c.style.background=`hsl(${Math.random()*360},100%,50%)`;
+  c.style.animationDuration=3+Math.random()*5+'s';
+  document.body.appendChild(c);
+}
+
+// Name touch hearts
+const nameEl=document.getElementById('name');
+nameEl.addEventListener('click',()=>{
+  for(let i=0;i<15;i++){
+    const h=document.createElement('div');
+    h.style.position='fixed';
+    h.style.left=(nameEl.getBoundingClientRect().left+Math.random()*100)+'px';
+    h.style.top=(nameEl.getBoundingClientRect().top)+'px';
+    h.style.width='12px';
+    h.style.height='12px';
+    h.style.background='hotpink';
+    h.style.transform='rotate(45deg)';
+    h.style.animation='heart 1.2s ease-out forwards';
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(),1200);
+  }
+});
+
+// Fireworks on click
+document.addEventListener('click', (e)=>{
+  for(let i=0;i<20;i++){
+    const fw=document.createElement('div');
+    fw.style.position='fixed';
+    fw.style.left=e.clientX+'px';
+    fw.style.top=e.clientY+'px';
+    fw.style.width='6px';
+    fw.style.height='6px';
+    fw.style.borderRadius='50%';
+    fw.style.background=`hsl(${Math.random()*360},100%,60%)`;
+    fw.style.pointerEvents='none';
+    fw.style.transition='all 1s ease-out';
+    document.body.appendChild(fw);
+    setTimeout(()=>{
+      fw.style.transform=`translate(${(Math.random()-0.5)*300}px,${(Math.random()-0.5)*300}px)`;
+      fw.style.opacity=0;
+    },10);
+    setTimeout(()=>fw.remove(),1000);
+  }
+});
+
+// Typewriter effect hero
+const texts=['✨ Happy 15th Birthday ✨','Celebrate Every Moment 💖','Fun & Joy All Around 🥳'];
+let ti=0,ci=0;
+const heroH2=document.querySelector('.hero h2');
+setInterval(()=>{
+  heroH2.innerHTML='✨ ' + texts[ti].slice(0,ci++) + ' ✨';
+  if(ci>texts[ti].length){ci=0;ti=(ti+1)%texts.length;}
+},120);
+</script></body>
+</html>
